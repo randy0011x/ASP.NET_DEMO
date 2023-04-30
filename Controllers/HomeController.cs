@@ -24,18 +24,36 @@ public class HomeController : Controller
         return View();
     }
 
-    public IActionResult Privacy()
-    {
-        var   user  = new User{
+      private static User _User  = new User{
             username = "todd",
             fullname = "Todd Astun",
             password = "234sdfs"
 
         };
-        var json = JsonConvert.SerializeObject(user, Formatting.Indented);
+       // [HttpGet("[action]" , Name = "Products_list")]
+    public IActionResult Privacy()
+    {
+      
+        var json = JsonConvert.SerializeObject(_User, Formatting.Indented);
         _logger.LogInformation(json);
         //throw new Exception("Bad site");
-        return View(user) ;
+        return View(_User) ;
+    }
+    [HttpPost("[action]")]
+    public IActionResult Privacy(User user)
+    {
+        if(ModelState.IsValid)
+        {
+            _User.fullname = user.fullname;
+            _User.username = user.username;
+            _User.password = user.password;
+            return  RedirectToAction("Privacy");
+        }
+        else
+        {
+            return View(user);
+        }
+        
     }
     public string Contact()
     {

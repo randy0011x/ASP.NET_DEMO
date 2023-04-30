@@ -7,3 +7,25 @@
 <p>Use this page to detail your site's privacy policy.</p>
 <h1>@Model.fullname</h1>
 <h1>@ViewBag?.Title</h1>
+
+<form asp-action="Privacy" asp-controller="Home" method="post">
+<div>
+    <label asp-for="username"></label>
+    <input asp-for="username"/>
+    <span asp-validation-for="username"></span>
+
+</div>
+<div>
+    <label asp-for="fullname"></label>
+    <input asp-for="fullname"/>
+     <span asp-validation-for="fullname"></span>
+     </div>
+     <div>
+     <label asp-for="password"></label>
+    <input asp-for="password"/>
+     <span asp-validation-for="password"></span>
+    </div>
+    <div>
+        <button type="submit">Submit</button>
+    </div>
+</form>
