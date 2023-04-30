@@ -5,6 +5,7 @@ namespace hello_world.Controllers
 
     {
         [Route("Blog/{id:int}")] //attribute routing
+        [Route("MySuperBlog/{id:int}")] //attribute routing
         public IActionResult Story(int id)
         {
             return Content(id.ToString());

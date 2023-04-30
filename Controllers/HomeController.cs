@@ -24,7 +24,7 @@ public class HomeController : Controller
         return View();
     }
 
-    public string Privacy()
+    public IActionResult Privacy()
     {
         var   user  = new User{
             username = "todd",
@@ -34,8 +34,8 @@ public class HomeController : Controller
         };
         var json = JsonConvert.SerializeObject(user, Formatting.Indented);
         _logger.LogInformation(json);
-        throw new Exception("Bad site");
-        return json;
+        //throw new Exception("Bad site");
+        return View(user) ;
     }
     public string Contact()
     {
@@ -53,4 +53,5 @@ public class HomeController : Controller
     {
         return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
     }
+
 }
