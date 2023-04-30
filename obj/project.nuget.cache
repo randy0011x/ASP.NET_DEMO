@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "TqavJvm1CrIrhPmusncOlqGUsW8xW2dSTGXb5Y/L+KnJjkCKYJ3UBVSJsM8JKsG9hP+SQmcvKsnEcYlViL7Exg==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\balar\\hello-world\\hello-world.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\balar\\.nuget\\packages\\newtonsoft.json\\13.0.3\\newtonsoft.json.13.0.3.nupkg.sha512"
+  ],
+  "logs": []
+}
